@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Bank Admin Dashboard</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+<div id="admin-dashboard">
+
+
+    <!-- ====================== -->
+    <!-- SIDEBAR -->
+    <!-- ====================== -->
+
+    <aside class="sidebar">
+
+        <h2>🏦 Bank Admin</h2>
+
+        <ul>
+
+            <li class="active">
+
+                <a href="admin.html">
+                    Admin Dashboard
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="dashboard.html">
+                    User Dashboard
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="#"
+                    onclick="logout(); return false;"
+                >
+                    Logout
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- ====================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ====================== -->
+
+    <main class="content">
+
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>
+                    Admin Dashboard
+                </h1>
+
+                <p>
+                    Account management
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <span id="admin-name">
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ====================== -->
+        <!-- ADMIN CONTROLS -->
+        <!-- ====================== -->
+
+        <section class="admin-controls">
+
+            <h2>
+                Admin Controls
+            </h2>
+
+
+            <div class="admin-control-grid">
+
+
+                <!-- DEPOSIT -->
+
+                <div class="admin-control-card">
+
+                    <div class="admin-icon">
+                        💰
+                    </div>
+
+                    <h3>
+                        Deposit Money
+                    </h3>
+
+                    <p>
+                        Add funds directly to a user's account.
+                    </p>
+
+                    <button
+                        type="button"
+                        onclick="document.getElementById('deposit-section').scrollIntoView({ behavior: 'smooth' })"
+                    >
+                        Make Deposit
+                    </button>
+
+                </div>
+
+
+
+                <!-- USERS -->
+
+                <div class="admin-control-card">
+
+                    <div class="admin-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        Manage Users
+                    </h3>
+
+                    <p>
+                        View registered users and account balances.
+                    </p>
+
+                    <button
+                        type="button"
+                        onclick="document.getElementById('user-section').scrollIntoView({ behavior: 'smooth' })"
+                    >
+                        View Users
+                    </button>
+
+                </div>
+
+
+
+                <!-- TRANSACTIONS -->
+
+                <div class="admin-control-card">
+
+                    <div class="admin-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Transactions
+                    </h3>
+
+                    <p>
+                        Monitor account activity.
+                    </p>
+
+                   <button
+    type="button"
+    onclick="document.getElementById('transaction-section').scrollIntoView({ behavior: 'smooth' })"
+>
+    View Transactions
+</button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ====================== -->
+        <!-- DEPOSIT SECTION -->
+        <!-- ====================== -->
+
+        <section
+            class="admin-section"
+            id="deposit-section"
+        >
+
+            <h2>
+                Deposit Money
+            </h2>
+
+            <p>
+                Select a user and enter the amount to deposit.
+            </p>
+
+
+            <!-- USER SELECT -->
+
+            <label for="user-select">
+                Select User Account
+            </label>
+
+
+            <select id="user-select">
+
+                <option value="">
+                    Loading users...
+                </option>
+
+            </select>
+
+
+
+            <!-- AMOUNT -->
+
+            <label for="deposit-amount">
+                Deposit Amount
+            </label>
+
+
+            <input
+                type="number"
+                id="deposit-amount"
+                placeholder="Enter amount"
+                min="1"
+                step="0.01"
+            >
+
+
+
+            <!-- DESCRIPTION -->
+
+            <label for="deposit-description">
+                Description
+            </label>
+
+
+            <input
+                type="text"
+                id="deposit-description"
+                placeholder="e.g. Account funding"
+            >
+
+
+
+            <!-- DEPOSIT BUTTON -->
+
+            <button
+                type="button"
+                onclick="adminDeposit()"
+            >
+                Deposit Money
+            </button>
+
+
+            <p id="deposit-message"></p>
+
+        </section>
+
+
+
+        <!-- ====================== -->
+        <!-- REGISTERED USERS -->
+        <!-- ====================== -->
+
+        <section
+            class="admin-section"
+            id="user-section"
+        >
+
+            <h2>
+                Registered Users
+            </h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Account Number
+                        </th>
+
+                        <th>
+                            Balance
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="user-table">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+<!-- ====================== -->
+
+<!-- TRANSACTIONS -->
+
+<!-- ====================== -->
+
+<section
+    class="admin-section"
+    id="transaction-section"
+>
+
+
+<h2>
+    Recent Transactions
+</h2>
+
+<p>
+    Monitor account activity.
+</p>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>User</th>
+
+            <th>Account Number</th>
+
+            <th>Type</th>
+
+            <th>Amount</th>
+
+            <th>Status</th>
+
+            <th>Description</th>
+
+            <th>Date</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="admin-transaction-table">
+
+    </tbody>
+
+</table>
+
+
+</section>
+
+    </main>
+
+
+</div>
+
+
+<!-- ====================== -->
+<!-- JAVASCRIPT -->
+<!-- ====================== -->
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
+

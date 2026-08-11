@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NOVA BANK - Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         MOBILE HEADER
+    ========================================== -->
+
+    <header class="mobile-header">
+
+        <div class="mobile-logo">
+            <strong>NOVA BANK</strong>
+        </div>
+
+        <div class="mobile-profile">
+
+            <img
+                id="mobile-profile-image"
+                src="default-profile.png"
+                alt="Profile"
+                class="mobile-profile-image"
+            >
+
+            <span id="mobile-profile-name"></span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         DESKTOP SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <span>🏦</span>
+
+            <h2>NOVA BANK</h2>
+
+        </div>
+
+
+        <ul>
+
+            <li class="active">
+
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+
+            </li>
+
+
+            
+
+
+            
+
+
+            <li>
+
+               <a href="cards.html">
+    💳 My Cards
+</a>
+            </li>
+
+
+            <li>
+
+                <a href="security.html">
+                    🔐 Security
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="#"
+                    onclick="logout(); return false;"
+                >
+                    🚪 Logout
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="content">
+
+
+      <div
+    class="profile"
+    onclick="window.location.href='profile.html'"
+>
+    <button
+        type="button"
+        class="profile-button"
+        aria-label="Profile"
+    >
+        <img
+            id="profile-image"
+            src="default-profile.png"
+            alt="Profile"
+            class="profile-image"
+        >
+
+        <span
+            id="profile-name"
+            class="profile-name"
+        ></span>
+
+        <span class="profile-arrow">
+            ▼
+        </span>
+    </button>
+
+</div>
+        <!-- =====================================
+             AVAILABLE BALANCE
+        ====================================== -->
+
+        <section class="card balance-card">
+
+            <h3>
+                Available Balance
+            </h3>
+
+            <h1>
+                $<span class="card-balance">0.00</span>
+            </h1>
+
+            <p>
+                Current available funds
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             QUICK ACTIONS
+        ====================================== -->
+
+        <section class="quick-actions">
+
+
+            <!-- TRANSFER -->
+
+            <a
+                href="transfer.html"
+                class="action-button"
+            >
+
+                <span class="action-icon">
+                    💸
+                </span>
+
+                <strong>
+                    Transfer
+                </strong>
+
+                <small>
+                    Send money
+                </small>
+
+            </a>
+
+
+
+            <!-- TRANSACTIONS -->
+
+            <button
+                type="button"
+                class="action-button"
+                onclick="
+                    document
+                    .getElementById('transactions-section')
+                    .scrollIntoView({
+                        behavior: 'smooth'
+                    })
+                "
+            >
+
+                <span class="action-icon">
+                    📊
+                </span>
+
+                <strong>
+                    Transactions
+                </strong>
+
+                <small>
+                    View activity
+                </small>
+
+            </button>
+
+
+
+            <!-- MY CARDS -->
+
+         <a
+    href="cards.html"
+    class="action-button"
+>
+    <span class="action-icon">
+        💳
+    </span>
+
+    <strong>
+        My Cards
+    </strong>
+
+    <small>
+        Manage cards
+    </small>
+</a>
+
+
+
+<a
+    href="profile.html"
+    class="action-button"
+>
+    <span class="action-icon">
+        👤
+    </span>
+
+    <strong>
+        Profile
+    </strong>
+
+    <small>
+        Manage profile
+    </small>
+</a>
+        </section>
+
+
+
+        <!-- =====================================
+             NOVA BANK CARD
+        ====================================== -->
+
+        <section class="bank-card">
+
+
+            <!-- CARD TOP -->
+
+            <div class="bank-card-top">
+
+                <div>
+
+                    <h2>
+                        NOVA
+                    </h2>
+
+                    <p>
+                        BANK
+                    </p>
+
+                </div>
+
+
+                <div class="card-chip">
+                    💳
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD BALANCE -->
+
+            <div class="bank-card-balance">
+
+                <p>
+                    Available Balance
+                </p>
+
+                <h1>
+                    $<span class="card-balance">0.00</span>
+                </h1>
+
+            </div>
+
+
+
+            <!-- ACCOUNT NUMBER -->
+
+            <div class="bank-card-account">
+
+                <p>
+                    Account Number
+                </p>
+
+                <strong id="account-number">
+                    0000000000
+                </strong>
+
+            </div>
+
+
+
+            <!-- CARD BOTTOM -->
+
+            <div class="bank-card-bottom">
+
+                <span id="card-name">
+                    Account Holder
+                </span>
+
+                <span>
+                    12/29
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+    <section class="card spending-card">
+
+    <h2>Monthly Spending</h2>
+
+    <div class="spending-chart" id="spending-chart">
+
+        <!-- JavaScript will create the bars here -->
+
+    </div>
+
+</section>
+
+        <!-- =====================================
+             RECENT TRANSACTIONS
+        ====================================== -->
+
+        <section
+            class="card transactions-card"
+            id="transactions-section"
+        >
+
+            <h2>
+                Recent Transactions
+            </h2>
+
+
+            <div class="transaction-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Recipient
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="transaction-table">
+
+                        <!-- dashboard.js loads transactions here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         MOBILE BOTTOM NAVIGATION
+    ========================================== -->
+
+    <nav class="mobile-nav">
+
+
+        <!-- HOME -->
+
+        <a
+            href="dashboard.html"
+            class="nav-item active"
+        >
+
+            <span>
+                🏠
+            </span>
+
+            <small>
+                Home
+            </small>
+
+        </a>
+
+
+
+        <!-- TRANSFER -->
+
+        <a
+            href="transfer.html"
+            class="nav-item"
+        >
+
+            <span>
+                💸
+            </span>
+
+            <small>
+                Transfer
+            </small>
+
+        </a>
+
+
+
+        <!-- HISTORY -->
+
+        <button
+            type="button"
+            class="nav-item"
+            onclick="
+                document
+                .getElementById('transactions-section')
+                .scrollIntoView({
+                    behavior: 'smooth'
+                })
+            "
+        >
+
+            <span>
+                📊
+            </span>
+
+            <small>
+                History
+            </small>
+
+        </button>
+
+
+
+        <!-- SECURITY -->
+
+        <a
+            href="security.html"
+            class="nav-item"
+        >
+
+            <span>
+                🔐
+            </span>
+
+            <small>
+                Security
+            </small>
+
+        </a>
+
+
+
+        <!-- LOGOUT -->
+
+        <button
+            type="button"
+            class="nav-item logout-nav"
+            onclick="logout()"
+        >
+
+            <span>
+                🚪
+            </span>
+
+            <small>
+                Logout
+            </small>
+
+        </button>
+
+
+    </nav>
+
+
+
+    <!-- =========================================
+         DASHBOARD JAVASCRIPT
+    ========================================== -->
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

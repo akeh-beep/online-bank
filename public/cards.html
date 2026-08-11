@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Cards - NOVA BANK</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="content">
+
+        <div class="topbar">
+
+            <div>
+                <h1>My Cards</h1>
+
+                <p>
+                    Manage your NOVA BANK cards
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- CARD -->
+
+        <section class="cards-page-card">
+
+            <div class="cards-page-top">
+
+                <div>
+                    <strong>NOVA</strong>
+                    <span>BANK</span>
+                </div>
+
+                <span class="cards-page-chip">
+                    💳
+                </span>
+
+            </div>
+
+
+            <div class="cards-page-number">
+
+                <small>
+                    Card Number
+                </small>
+
+               <strong id="card-number">
+    •••• •••• •••• ••••
+</strong>
+            </div>
+
+
+            <div class="cards-page-bottom">
+
+                <div>
+
+                    <small>
+                        CARD HOLDER
+                    </small>
+
+                    <strong id="cards-holder">
+                        Account Holder
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        EXPIRES
+                    </small>
+
+                    <strong>
+                        12/29
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARD INFORMATION -->
+
+        <section class="card card-information">
+
+            <h2>
+                Card Information
+            </h2>
+
+            <div class="card-info-row">
+
+                <span>
+                    Card Type
+                </span>
+
+                <strong>
+                    NOVA Debit Card
+                </strong>
+
+            </div>
+
+
+            <div class="card-info-row">
+
+                <span>
+                    Status
+                </span>
+
+                <strong class="card-status">
+                    Active
+                </strong>
+
+            </div>
+
+
+            <div class="card-info-row">
+
+                <span>
+                    Card Holder
+                </span>
+
+                <strong id="card-holder-name">
+                    Account Holder
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIONS -->
+
+        <section class="card card-actions">
+
+          <button
+    type="button"
+    id="lock-card-button"
+    onclick="toggleCardLock()"
+>
+    🔒 Lock Card
+</button>
+
+         <button
+    type="button"
+    id="details-button"
+    onclick="toggleCardDetails()"
+>
+    👁 View Details
+</button>
+
+        </section>
+
+    </main>
+
+
+    <script src="cards.js"></script>
+
+</body>
+
+</html>

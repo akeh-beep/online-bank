@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Profile</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <main class="content">
+
+        <h1>My Profile</h1>
+
+        <div class="card profile-card">
+
+            <!-- PROFILE PICTURE -->
+
+            <div class="profile-picture-section">
+
+                <img
+                    src="default-profile.png"
+                    id="profile-image"
+                    class="avatar"
+                    alt="Profile Picture"
+                >
+
+                <h3>Profile Picture</h3>
+
+                <p>
+                    Choose a new picture for your account.
+                </p>
+
+                <label
+                    for="image-input"
+                    class="upload-button"
+                >
+                    Choose Picture
+                </label>
+
+                <input
+                    type="file"
+                    id="image-input"
+                    accept="image/*"
+                >
+
+            </div>
+
+
+            <!-- FULL NAME -->
+
+            <label for="fullName">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="fullName"
+            >
+
+
+            <!-- EMAIL -->
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+            >
+
+
+            <!-- CURRENT PASSWORD -->
+
+            <label for="current-password">
+                Current Password
+            </label>
+
+            <input
+                type="password"
+                id="current-password"
+            >
+
+
+            <!-- NEW PASSWORD -->
+
+            <label for="new-password">
+                New Password
+            </label>
+
+            <input
+                type="password"
+                id="new-password"
+            >
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <label for="confirm-password">
+                Confirm New Password
+            </label>
+
+            <input
+                type="password"
+                id="confirm-password"
+            >
+
+
+            <!-- SAVE -->
+
+            <button
+                type="button"
+                onclick="saveProfile()"
+            >
+                Save Changes
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

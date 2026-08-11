@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NOVA BANK - Create Account</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="auth-container">
+
+    <div class="auth-card">
+
+        <!-- LOGO -->
+
+        <img
+            src="logo.png"
+            class="logo"
+            alt="NOVA BANK"
+        >
+
+
+        <!-- TITLE -->
+
+        <h2>
+            Create Your Account
+        </h2>
+
+        <p class="subtitle">
+            Open your NOVA BANK account
+        </p>
+
+
+        <!-- FULL NAME -->
+
+        <label for="fullname">
+            Full Name
+        </label>
+
+        <input
+            type="text"
+            id="fullname"
+            placeholder="Enter your full name"
+            autocomplete="name"
+        >
+
+
+        <!-- USERNAME -->
+
+        <label for="username">
+            Username
+        </label>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Choose a username"
+            autocomplete="username"
+        >
+
+
+        <!-- EMAIL -->
+
+        <label for="email">
+            Email
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+        >
+
+
+        <!-- PASSWORD -->
+
+        <label for="password">
+            Password
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Create a password"
+            autocomplete="new-password"
+        >
+
+
+        <!-- CREATE ACCOUNT -->
+
+        <button
+            type="button"
+            onclick="register()"
+        >
+            Create Account
+        </button>
+
+
+        <!-- LOGIN -->
+
+        <p class="auth-link">
+
+            Already have an account?
+
+            <a href="index.html">
+                Login
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="register.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NOVA BANK Bank - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-box">
+
+       <img
+    src="logo.png"
+    alt="NOVA BANK Bank"
+    class="login-logo-big"
+>
+
+        <h2>Welcome Back</h2>
+
+        <p class="login-subtitle">
+            Sign in to NOVA BANK Bank
+        </p>
+
+        <form id="login-form">
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                autocomplete="username"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button type="submit">
+                Sign In
+            </button>
+
+        </form>
+
+        <p id="login-message"></p>
+
+        <a href="register.html">
+            Create a New Account
+        </a>
+
+    </div>
+
+
+    <script>
+
+        document
+            .getElementById("login-form")
+            .addEventListener("submit", login);
+
+
+        async function login(event) {
+
+            event.preventDefault();
+
+            const username =
+                document
+                    .getElementById("username")
+                    .value
+                    .trim();
+
+            const password =
+                document
+                    .getElementById("password")
+                    .value;
+
+            const message =
+                document.getElementById(
+                    "login-message"
+                );
+
+            message.textContent =
+                "Signing in...";
+
+
+            try {
+
+                const response =
+                    await fetch("/api/login", {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            username: username,
+                            password: password
+                        })
+
+                    });
+
+
+                const data =
+                    await response.json();
+
+                console.log(
+                    "Login response:",
+                    data
+                );
+
+
+                if (!data.success) {
+
+                    message.textContent =
+                        data.message ||
+                        "Login failed.";
+
+                    return;
+                }
+
+
+                localStorage.setItem(
+                    "userId",
+                    data.userId
+                );
+
+                localStorage.setItem(
+                    "fullName",
+                    data.fullName
+                );
+
+                localStorage.setItem(
+                    "balance",
+                    data.balance
+                );
+
+                localStorage.setItem(
+                    "accountNumber",
+                    data.accountNumber
+                );
+
+                localStorage.setItem(
+                    "role",
+                    data.role || "user"
+                );
+
+
+                if (data.role === "admin") {
+
+                    window.location.href =
+                        "admin.html";
+
+                } else {
+
+                    window.location.href =
+                        "dashboard.html";
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Login error:",
+                    error
+                );
+
+                message.textContent =
+                    "Unable to connect to server.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

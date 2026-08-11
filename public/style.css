@@ -1,0 +1,3377 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fa;
+    color: #111827;
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+body.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #00c6a7,
+        #0b5ed7
+    );
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 40px;
+
+    background: #ffffff;
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+}
+
+.login-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.login-logo-big {
+    width: 220px;
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.login-box h2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+    color: #123b7a;
+}
+
+.login-subtitle {
+    margin-bottom: 25px;
+    color: #777;
+    font-size: 15px;
+}
+
+.login-box input {
+    display: block;
+    width: 100%;
+
+    padding: 14px;
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-size: 16px;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: #0b5ed7;
+}
+
+.login-box button {
+    display: block;
+    width: 100%;
+
+    padding: 14px;
+    margin: 5px 0 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #0b5ed7;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    opacity: 0.9;
+}
+
+.login-box a {
+    color: #0b5ed7;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#login-message {
+    min-height: 20px;
+    margin: 5px 0 15px;
+
+    color: #d9534f;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 245px;
+    padding: 30px 20px;
+
+.sidebar {
+    background: #123b7a;
+}
+    z-index: 1000;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px 30px;
+}
+
+.sidebar-logo span {
+    font-size: 28px;
+}
+
+.sidebar-logo h2 {
+    color: #ffffff;
+    font-size: 23px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    color: rgba(255,255,255,0.8);
+
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.sidebar a:hover {
+    background: #5781cf1f;
+    color: #ffffff;
+}
+
+.sidebar li.active a {
+    background: #ffffff;
+    color: #1261d6;
+    font-weight: 700;
+}
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+.mobile-header {
+    display: none;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.content {
+    min-height: 100vh;
+
+    margin-left: 245px;
+
+    padding: 35px;
+}
+
+/* =========================
+   PROFILE BUTTON
+========================= */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid #ffffff;
+}
+
+#profile-name {
+    display: inline-block;
+    font-weight: 600;
+    color: #1e293b;
+}
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.topbar h1 {
+    margin: 0;
+
+    font-size: 32px;
+    color: #111827;
+}
+
+.topbar p {
+    margin-top: 7px;
+
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.profile {
+    font-weight: 600;
+    color: #123b7a;
+}
+
+
+/* =========================================================
+   GENERAL CARD
+========================================================= */
+
+.card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   AVAILABLE BALANCE
+========================================================= */
+
+.balance-card {
+    padding: 28px;
+    margin-bottom: 22px;
+}
+
+.balance-card h3 {
+    margin-bottom: 8px;
+
+    color: #6b7280;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.balance-card h1 {
+    margin: 0;
+
+    color: #123b7a;
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.balance-card p {
+    margin-top: 8px;
+
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.action-button {
+    width: 100%;
+    min-height: 135px;
+
+    padding: 20px 12px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.06);
+
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+.action-icon {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 34px;
+}
+
+.action-button strong {
+    display: block;
+
+    font-size: 17px;
+}
+
+.action-button small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BLUE BANK CARD
+========================================================= */
+
+.bank-card {
+    width: 100%;
+
+    min-height: 300px;
+
+    padding: 30px;
+
+    margin-bottom: 24px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1261d6 0%,
+            #123d91 100%
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(18, 61, 145, 0.25);
+
+    overflow: hidden;
+}
+
+
+/* TOP */
+
+.bank-card-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.bank-card-top h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.bank-card-top p {
+    margin-top: 3px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 17px;
+}
+
+.card-chip {
+    font-size: 32px;
+}
+
+
+/* BALANCE */
+
+.bank-card-balance {
+    margin-top: 35px;
+
+    text-align: center;
+}
+
+.bank-card-balance p {
+    margin-bottom: 8px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 17px;
+}
+
+.bank-card-balance h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 42px;
+    line-height: 1.15;
+
+    font-weight: 700;
+}
+
+
+/* ACCOUNT */
+
+.bank-card-account {
+    margin-top: 28px;
+
+    text-align: center;
+}
+
+.bank-card-account p {
+    margin-bottom: 5px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 15px;
+}
+
+.bank-card-account strong {
+    color: #ffffff;
+
+    font-size: 23px;
+
+    letter-spacing: 3px;
+}
+
+
+/* BOTTOM */
+
+.bank-card-bottom {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 30px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   MONTHLY SPENDING
+========================================================= */
+
+.spending-card {
+    padding: 28px;
+
+    margin-bottom: 24px;
+}
+
+.spending-card h2 {
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #123b7a;
+
+    font-size: 28px;
+}
+
+
+/* CHART */
+
+.spending-chart {
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-around;
+
+    gap: 10px;
+
+    padding: 20px 10px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.chart-bar {
+    width: 12%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.chart-bar span {
+    display: block;
+
+    width: 32px;
+
+    min-height: 15px;
+
+    background:
+        linear-gradient(
+            to top,
+            #1261d6,
+            #3182f6
+        );
+
+    border-radius: 9px 9px 0 0;
+}
+
+.chart-bar small {
+    margin-top: 10px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   TRANSACTIONS
+========================================================= */
+
+.transactions-card {
+    padding: 28px;
+
+    margin-bottom: 30px;
+}
+
+.transactions-card h2 {
+    margin-bottom: 20px;
+
+    color: #111827;
+
+    font-size: 25px;
+}
+
+.transaction-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.transaction-wrapper table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+}
+
+.transaction-wrapper th {
+    padding: 13px;
+
+    text-align: left;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.transaction-wrapper td {
+    padding: 15px 13px;
+
+    color: #222;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.transaction-wrapper tr {
+    cursor: pointer;
+}
+
+.transaction-wrapper tr:hover td {
+    background: #f8fafc;
+}
+
+.success {
+    color: #16803c;
+    font-weight: 600;
+}
+
+.pending {
+    color: #d97706;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MOBILE BOTTOM NAV
+========================================================= */
+
+.mobile-nav {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        background: #f4f6fa;
+
+        overflow-x: hidden;
+    }
+
+
+    body {
+        padding-bottom: 82px;
+    }
+
+
+    /* -----------------------------------------
+       SIDEBAR
+    ----------------------------------------- */
+
+    .sidebar {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------
+       MOBILE HEADER
+    ----------------------------------------- */
+
+    .mobile-header {
+        display: flex;
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+
+        width: 100%;
+        height: 64px;
+
+        padding: 0 18px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #e5e7eb;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-logo {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    .mobile-logo span {
+        font-size: 23px;
+    }
+
+    .mobile-logo strong {
+        color: #123b7a;
+
+        font-size: 21px;
+        letter-spacing: 0.5px;
+    }
+
+    .mobile-profile {
+        color: #374151;
+
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+
+    /* -----------------------------------------
+       CONTENT
+    ----------------------------------------- */
+
+    .content {
+        width: 100%;
+
+        min-height: auto;
+
+        margin: 0;
+
+        padding: 18px 15px 100px;
+
+        background: #f4f6fa;
+    }
+
+
+    /* -----------------------------------------
+       TOP BAR
+    ----------------------------------------- */
+
+    .topbar {
+        display: block;
+
+        margin: 3px 0 18px;
+    }
+
+    .topbar h1 {
+        font-size: 29px;
+        line-height: 1.2;
+    }
+
+    .topbar p {
+        margin-top: 6px;
+
+        font-size: 16px;
+    }
+
+    .topbar .profile {
+        display: none;
+    }
+
+
+    /* -----------------------------------------
+       BALANCE
+    ----------------------------------------- */
+
+    .balance-card {
+        padding: 23px;
+
+        margin-bottom: 18px;
+
+        border-radius: 20px;
+    }
+
+    .balance-card h3 {
+        font-size: 16px;
+    }
+
+    .balance-card h1 {
+        font-size: 34px;
+    }
+
+
+    /* -----------------------------------------
+       QUICK ACTIONS
+    ----------------------------------------- */
+
+    .quick-actions {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 13px;
+
+        margin-bottom: 20px;
+    }
+
+    .action-button {
+        min-height: 112px;
+
+        padding: 15px 8px;
+
+        border-radius: 18px;
+    }
+
+    .action-icon {
+        font-size: 30px;
+
+        margin-bottom: 7px;
+    }
+
+    .action-button strong {
+        font-size: 17px;
+    }
+
+    .action-button small {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------
+       BANK CARD
+    ----------------------------------------- */
+
+    .bank-card {
+        width: 100%;
+
+        min-height: 390px;
+
+        padding: 27px 24px;
+
+        margin: 0 0 20px;
+
+        border-radius: 27px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #1261d6 0%,
+                #123d91 100%
+            );
+
+        box-shadow:
+            0 12px 28px rgba(18, 61, 145, 0.25);
+    }
+
+    .bank-card-top h2 {
+        font-size: 30px;
+    }
+
+    .bank-card-top p {
+        font-size: 17px;
+    }
+
+    .card-chip {
+        font-size: 28px;
+    }
+
+    .bank-card-balance {
+        margin-top: 52px;
+
+        text-align: center;
+    }
+
+    .bank-card-balance p {
+        margin-bottom: 9px;
+
+        font-size: 17px;
+    }
+
+    .bank-card-balance h1 {
+        font-size: 39px;
+
+        line-height: 1.15;
+
+        white-space: nowrap;
+    }
+
+    .bank-card-account {
+        margin-top: 42px;
+
+        text-align: center;
+    }
+
+    .bank-card-account p {
+        margin-bottom: 5px;
+
+        font-size: 16px;
+    }
+
+    .bank-card-account strong {
+        font-size: 23px;
+
+        letter-spacing: 3px;
+
+        white-space: nowrap;
+    }
+
+    .bank-card-bottom {
+        margin-top: 40px;
+
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------
+       SPENDING CARD
+    ----------------------------------------- */
+
+    .spending-card {
+        width: 100%;
+
+        padding: 22px 18px;
+
+        margin-bottom: 20px;
+
+        border-radius: 22px;
+    }
+
+    .spending-card h2 {
+        margin-bottom: 20px;
+
+        font-size: 28px;
+
+        text-align: center;
+    }
+
+    .spending-chart {
+        height: 235px;
+
+        padding:
+            15px
+            5px
+            0;
+
+        gap: 5px;
+    }
+
+    .chart-bar {
+        width: 15%;
+    }
+
+    .chart-bar span {
+        width: 34px;
+
+        max-width: 100%;
+    }
+
+    .chart-bar small {
+        margin-top: 9px;
+
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------
+       TRANSACTIONS
+    ----------------------------------------- */
+
+    .transactions-card {
+        width: 100%;
+
+        padding: 20px 17px;
+
+        border-radius: 22px;
+    }
+
+    .transactions-card h2 {
+        margin-bottom: 18px;
+
+        font-size: 23px;
+    }
+
+    .transaction-wrapper {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .transaction-wrapper table {
+        min-width: 550px;
+    }
+
+    .transaction-wrapper th {
+        padding: 11px 8px;
+
+        font-size: 12px;
+    }
+
+    .transaction-wrapper td {
+        padding: 13px 8px;
+
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------
+       BOTTOM NAV
+    ----------------------------------------- */
+
+    .mobile-nav {
+        display: flex;
+
+        position: fixed;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: 2000;
+
+        width: 100%;
+        height: 75px;
+
+        padding: 5px 3px;
+
+        background: #ffffff;
+
+        border-top: 1px solid #dddddd;
+
+        box-shadow:
+            0 -4px 15px rgba(0, 0, 0, 0.08);
+
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-item {
+        width: 25%;
+        height: 100%;
+
+        border: none;
+
+        background: transparent;
+
+        color: #555;
+
+        text-decoration: none;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 3px;
+
+        font-size: 23px;
+
+        cursor: pointer;
+    }
+
+    .nav-item span {
+        line-height: 1;
+    }
+
+    .nav-item small {
+        font-size: 12px;
+
+        color: #555;
+    }
+
+    .nav-item.active {
+        color: #1261d6;
+    }
+
+    .nav-item.active small {
+        color: #1261d6;
+
+        font-weight: 700;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .bank-card {
+        min-height: 365px;
+
+        padding: 24px 20px;
+    }
+
+    .bank-card-balance {
+        margin-top: 45px;
+    }
+
+    .bank-card-balance h1 {
+        font-size: 34px;
+    }
+
+    .bank-card-account {
+        margin-top: 36px;
+    }
+
+    .bank-card-account strong {
+        font-size: 20px;
+
+        letter-spacing: 2px;
+    }
+
+    .bank-card-bottom {
+        margin-top: 34px;
+    }
+
+    .spending-card h2 {
+        font-size: 25px;
+    }
+
+    .chart-bar span {
+        width: 29px;
+    }
+}
+/* =========================================
+   TRANSFER PAGE
+========================================= */
+
+.transfer-card {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 32px;
+}
+
+.transfer-card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   SENDER ACCOUNT
+========================================= */
+
+.sender-box {
+    background: #f5f7fb;
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+.sender-box h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+.account-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.account-info-row:last-child {
+    border-bottom: none;
+}
+
+.account-info-row span {
+    color: #6b7280;
+}
+
+.account-info-row strong {
+    color: #111827;
+    text-align: right;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.transfer-divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 25px 0;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    background: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   RECIPIENT STATUS
+========================================= */
+
+.recipient-status {
+    margin: 7px 0 0;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+.recipient-status.success {
+    color: #16a34a;
+}
+
+.recipient-status.error {
+    color: #dc2626;
+}
+
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.transfer-submit {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-top: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+}
+
+.transfer-submit:hover {
+    opacity: 0.92;
+}
+
+.transfer-submit:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   MOBILE TRANSFER PAGE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .content {
+        padding-bottom: 100px;
+    }
+
+    .topbar {
+        margin-bottom: 20px;
+    }
+
+    .topbar h1 {
+        font-size: 28px;
+    }
+
+    .topbar p {
+        font-size: 16px;
+    }
+
+    .transfer-card {
+        margin: 15px 0;
+        padding: 22px;
+        border-radius: 24px;
+    }
+
+    .transfer-card h2 {
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+
+    .sender-box {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .account-info-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .account-info-row strong {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .form-group input {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .transfer-submit {
+        padding: 16px;
+        font-size: 16px;
+    }
+
+}
+/* =========================================
+   MOBILE DASHBOARD COMPACT LAYOUT
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Main content */
+    .content {
+        padding: 18px 16px 90px;
+    }
+
+    /* -----------------------------
+       QUICK ACTION BUTTONS
+       ----------------------------- */
+
+    .quick-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 16px 0 22px;
+    }
+
+    .action-button {
+        min-height: 115px;
+        padding: 16px 10px;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .action-icon {
+        font-size: 30px;
+        line-height: 1;
+        margin-bottom: 9px;
+    }
+
+    .action-button strong {
+        font-size: 17px;
+        line-height: 1.2;
+    }
+
+    .action-button small {
+        font-size: 14px;
+        margin-top: 6px;
+    }
+
+
+    /* -----------------------------
+       BANK CARD
+       ----------------------------- */
+
+    .bank-card {
+        width: 100%;
+        height: 330px;
+        min-height: 330px;
+        box-sizing: border-box;
+
+        margin: 0 0 22px;
+        padding: 26px 26px 22px;
+
+        border-radius: 28px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        overflow: hidden;
+    }
+
+
+    /* Card top */
+
+    .bank-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .bank-card-top h2 {
+        font-size: 32px;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .bank-card-top p {
+        font-size: 16px;
+        margin: 5px 0 0;
+    }
+
+    .card-chip {
+        font-size: 28px;
+    }
+
+
+    /* Card balance */
+
+    .bank-card-balance {
+        text-align: center;
+        margin: 0;
+    }
+
+    .bank-card-balance p {
+        font-size: 16px;
+        margin: 0 0 5px;
+    }
+
+    .bank-card-balance h1 {
+        font-size: 34px;
+        line-height: 1.1;
+        margin: 0;
+    }
+
+
+    /* Account number */
+
+    .bank-card-account {
+        text-align: center;
+        margin: 0;
+    }
+
+    .bank-card-account p {
+        font-size: 15px;
+        margin: 0 0 4px;
+    }
+
+    .bank-card-account strong {
+        font-size: 21px;
+        letter-spacing: 3px;
+    }
+
+
+    /* Card bottom */
+
+    .bank-card-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------
+       MONTHLY SPENDING
+       ----------------------------- */
+
+    .spending-card {
+        margin-top: 0;
+        padding: 22px 18px;
+        border-radius: 28px;
+    }
+
+    .spending-card h2 {
+        font-size: 25px;
+        margin-top: 0;
+    }
+
+
+    /* -----------------------------
+       TRANSACTIONS
+       ----------------------------- */
+
+    .transactions-card {
+        margin-top: 22px;
+        border-radius: 28px;
+        overflow-x: auto;
+    }
+
+}
+/* =========================================================
+   MOBILE DASHBOARD - CLEAN COMPACT DESIGN
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #f5f7fb;
+        overflow-x: hidden;
+    }
+
+    .content {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 14px 90px;
+        margin: 0;
+    }
+
+
+    /* =====================================================
+       MOBILE HEADER
+       ===================================================== */
+
+    .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        height: 70px;
+
+        padding: 0 18px;
+        box-sizing: border-box;
+
+        background: #f5f7fb;
+    }
+
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .mobile-logo span {
+        display: none;
+    }
+
+    .mobile-logo strong {
+        color: #0758c9;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+  .mobile-profile {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.mobile-profile-image {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block !important;
+    visibility: visible !important;
+}
+
+#mobile-profile-name {
+    display: inline-block !important;
+    visibility: visible !important;
+    color: #111827 !important;
+    font-size: 14px;
+    font-weight: 700;
+}
+.mobile-profile-image {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+    /* =====================================================
+       HIDE DESKTOP SIDEBAR
+       ===================================================== */
+
+    .sidebar {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       TOP BAR
+       ===================================================== */
+
+    .topbar {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       REMOVE THE SEPARATE AVAILABLE BALANCE CARD
+       ===================================================== */
+
+    .balance-card {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       QUICK ACTIONS
+       FOUR BUTTONS IN ONE ROW
+       ===================================================== */
+
+    .quick-actions {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 8px;
+
+        margin: 4px 0 18px;
+        padding: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    .action-button {
+        width: 100%;
+        min-width: 0;
+
+        height: 118px;
+
+        padding: 10px 5px;
+
+        border: none;
+        border-radius: 18px;
+
+        background: #ffffff;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        box-sizing: border-box;
+
+        box-shadow:
+            0 4px 14px rgba(0, 0, 0, 0.06);
+
+        color: #111827;
+
+        text-decoration: none;
+
+        cursor: pointer;
+    }
+
+
+    .action-button:active {
+        transform: scale(0.97);
+    }
+
+
+    .action-icon {
+        display: block;
+
+        font-size: 27px;
+        line-height: 1;
+
+        margin-bottom: 9px;
+    }
+
+
+    .action-button strong {
+        display: block;
+
+        font-size: 13px;
+        line-height: 1.15;
+
+        white-space: nowrap;
+
+        color: #111827;
+    }
+
+
+    .action-button small {
+        display: block;
+
+        margin-top: 6px;
+
+        font-size: 10px;
+        line-height: 1.15;
+
+        white-space: nowrap;
+
+        color: #6b7280;
+    }
+
+
+    /* =====================================================
+       BANK CARD
+       COMPACT CARD LIKE THE REFERENCE
+       ===================================================== */
+
+    .bank-card {
+        width: 100%;
+
+        /*
+         * Makes the card shorter instead of
+         * allowing it to become extremely tall.
+         */
+        aspect-ratio: 1.57 / 1;
+
+        height: auto;
+        min-height: 0;
+
+        margin: 0 0 18px;
+
+        padding: 22px 24px 18px;
+
+        box-sizing: border-box;
+
+        border-radius: 25px;
+
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background:
+            linear-gradient(
+                135deg,
+                #1465d8 0%,
+                #1457bd 55%,
+                #17489d 100%
+            );
+
+        color: white;
+
+        box-shadow:
+            0 10px 25px rgba(20, 75, 160, 0.18);
+    }
+
+
+    /* =====================================================
+       CARD TOP
+       ===================================================== */
+
+    .bank-card-top {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: flex-start;
+
+        margin: 0;
+    }
+
+
+    .bank-card-top h2 {
+        margin: 0;
+
+        font-size: 30px;
+        line-height: 1;
+
+        font-weight: 800;
+
+        color: white;
+    }
+
+
+    .bank-card-top p {
+        margin: 5px 0 0;
+
+        font-size: 16px;
+
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+
+    .card-chip {
+        font-size: 28px;
+
+        line-height: 1;
+    }
+
+
+    /* =====================================================
+       CARD BALANCE
+       ===================================================== */
+
+    .bank-card-balance {
+        text-align: center;
+
+        margin: 0;
+    }
+
+
+    .bank-card-balance p {
+        margin: 0 0 4px;
+
+        font-size: 14px;
+
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+
+    .bank-card-balance h1 {
+        margin: 0;
+
+        font-size: 34px;
+
+        line-height: 1.05;
+
+        font-weight: 700;
+
+        color: white;
+    }
+
+
+    /* =====================================================
+       ACCOUNT NUMBER
+       ===================================================== */
+
+    .bank-card-account {
+        text-align: center;
+
+        margin: 0;
+    }
+
+
+    .bank-card-account p {
+        margin: 0 0 4px;
+
+        font-size: 14px;
+
+        color: rgba(255, 255, 255, 0.82);
+    }
+
+
+    .bank-card-account strong {
+        font-size: 20px;
+
+        letter-spacing: 3px;
+
+        color: white;
+    }
+
+
+    /* =====================================================
+       CARD BOTTOM
+       ===================================================== */
+
+    .bank-card-bottom {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 0;
+
+        font-size: 14px;
+
+        color: white;
+    }
+
+
+    /* =====================================================
+       MONTHLY SPENDING
+       ===================================================== */
+
+    .spending-card {
+        width: 100%;
+
+        margin: 0 0 18px;
+
+        padding: 20px 18px 16px;
+
+        box-sizing: border-box;
+
+        border-radius: 24px;
+
+        background: white;
+
+        box-shadow:
+            0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+
+
+    .spending-card h2 {
+        margin: 0 0 14px;
+
+        font-size: 22px;
+
+        color: #123c76;
+
+        text-align: left;
+    }
+
+
+    .spending-chart {
+        height: 210px;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        justify-content: space-between;
+
+        gap: 8px;
+    }
+
+
+    .chart-bar {
+        flex: 1;
+
+        height: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: flex-end;
+
+        align-items: center;
+    }
+
+
+    .chart-bar span {
+        width: 60%;
+
+        min-width: 22px;
+
+        max-width: 42px;
+
+        border-radius: 9px 9px 0 0;
+
+        background: linear-gradient(
+            to top,
+            #1163d8,
+            #3b82f6
+        );
+    }
+
+
+    .chart-bar small {
+        margin-top: 7px;
+
+        font-size: 11px;
+
+        color: #6b7280;
+    }
+
+
+    /* =====================================================
+       RECENT TRANSACTIONS
+       ===================================================== */
+
+    .transactions-card {
+        width: 100%;
+
+        margin: 0;
+
+        padding: 20px 16px;
+
+        box-sizing: border-box;
+
+        border-radius: 24px;
+
+        background: white;
+
+        box-shadow:
+            0 4px 14px rgba(0, 0, 0, 0.06);
+
+        overflow-x: auto;
+    }
+
+
+    .transactions-card h2 {
+        margin: 0 0 14px;
+
+        font-size: 22px;
+
+        color: #111827;
+    }
+
+
+    .transaction-wrapper {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+
+    .transactions-card table {
+        width: 100%;
+
+        min-width: 500px;
+
+        border-collapse: collapse;
+    }
+
+
+    /* =====================================================
+       MOBILE BOTTOM NAVIGATION
+       ===================================================== */
+
+    .mobile-nav {
+        position: fixed;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 72px;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        background: white;
+
+        border-top: 1px solid #e5e7eb;
+
+        z-index: 9999;
+
+        box-shadow:
+            0 -4px 15px rgba(0, 0, 0, 0.06);
+    }
+
+
+    .mobile-nav .nav-item {
+        border: none;
+
+        background: transparent;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 3px;
+
+        text-decoration: none;
+
+        color: #6b7280;
+
+        font-size: 12px;
+
+        cursor: pointer;
+    }
+
+
+    .mobile-nav .nav-item span {
+        font-size: 25px;
+
+        line-height: 1;
+    }
+
+
+    .mobile-nav .nav-item small {
+        font-size: 11px;
+    }
+
+
+    .mobile-nav .nav-item.active {
+        color: #1261d5;
+
+        font-weight: 700;
+    }
+
+}
+/* =========================================
+   MOBILE BOTTOM NAVIGATION - ALIGNMENT
+========================================= */
+
+.mobile-nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 70px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+
+    padding: 6px 4px;
+
+    z-index: 9999;
+
+    box-sizing: border-box;
+}
+
+
+/* Every navigation item gets equal space */
+
+.mobile-nav .nav-item {
+    flex: 1 1 0;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    margin: 0;
+    padding: 4px 2px;
+
+    border: none;
+    background: transparent;
+
+    text-decoration: none;
+
+    color: #6b7280;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+
+/* Icons */
+
+.mobile-nav .nav-item span {
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    line-height: 24px;
+
+    text-align: center;
+
+    font-size: 20px;
+}
+
+
+/* Text */
+
+.mobile-nav .nav-item small {
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 11px;
+    line-height: 14px;
+
+    white-space: nowrap;
+}
+
+
+/* Active item */
+
+.mobile-nav .nav-item.active {
+    color: #2563eb;
+}
+
+
+/* Logout */
+
+.mobile-nav .logout-nav {
+    color: #dc2626;
+}
+
+
+/* Keep navigation above page content */
+
+@media (max-width: 768px) {
+
+    body {
+        padding-bottom: 75px;
+    }
+
+}
+/* =========================================
+   CREATE ACCOUNT PAGE
+========================================= */
+
+.auth-container {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CREATE ACCOUNT CARD
+========================================= */
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+
+    background: #ffffff;
+
+    padding: 35px 30px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.auth-card .logo {
+    display: block;
+
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    margin: 0 auto 15px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.auth-card h2 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 26px;
+
+    color: #111827;
+}
+
+
+.auth-card .subtitle {
+    margin: 8px 0 25px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.auth-card label {
+    display: block;
+
+    margin: 15px 0 6px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.auth-card input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+}
+
+
+.auth-card input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================================
+   CREATE BUTTON
+========================================= */
+
+.auth-card button {
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.auth-card button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================
+   LOGIN LINK
+========================================= */
+
+.auth-link {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+.auth-link a {
+    color: #2563eb;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .auth-container {
+        padding: 15px;
+    }
+
+    .auth-card {
+        padding: 28px 20px;
+
+        border-radius: 15px;
+    }
+
+    .auth-card h2 {
+        font-size: 23px;
+    }
+
+}
+/* =========================================
+   SECURITY PAGE
+========================================= */
+
+.security-card {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 32px;
+}
+
+.security-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.security-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf2ff;
+
+    border-radius: 16px;
+
+    font-size: 28px;
+}
+
+.security-heading h2 {
+    margin: 0 0 6px;
+
+    color: #111827;
+
+    font-size: 24px;
+}
+
+.security-heading p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.security-form-group {
+    margin-bottom: 20px;
+}
+
+.security-form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.security-form-group input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.security-form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+.change-password-button {
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.1s;
+}
+
+.change-password-button:hover {
+    background: #1d4ed8;
+}
+
+.change-password-button:active {
+    transform: scale(0.99);
+}
+
+.password-message {
+    min-height: 20px;
+
+    margin: 5px 0 15px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.password-message.error {
+    color: #dc2626;
+}
+
+.password-message.success {
+    color: #16a34a;
+}
+
+
+/* =========================================
+   MOBILE SECURITY
+========================================= */
+
+@media (max-width: 768px) {
+
+    .security-card {
+        width: 100%;
+
+        margin: 15px 0;
+
+        padding: 24px 20px;
+
+        box-sizing: border-box;
+
+        border-radius: 22px;
+    }
+
+    .security-heading {
+        gap: 13px;
+
+        margin-bottom: 25px;
+    }
+
+    .security-icon {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 13px;
+
+        font-size: 23px;
+    }
+
+    .security-heading h2 {
+        font-size: 21px;
+    }
+
+    .security-heading p {
+        font-size: 13px;
+
+        line-height: 1.4;
+    }
+
+    .security-form-group input {
+        height: 50px;
+
+        font-size: 16px;
+    }
+
+    .change-password-button {
+        height: 52px;
+    }
+
+}
+/* =========================================================
+   PROFILE PAGE
+   ========================================================= */
+
+.profile-card {
+    width: 100%;
+    max-width: 700px;
+    margin: 25px auto;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+
+/* -------------------------
+   PROFILE HEADER
+------------------------- */
+
+.profile-picture-section {
+    text-align: center;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-picture-section .avatar {
+    width: 125px;
+    height: 125px;
+
+    display: block;
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid #e8f0ff;
+    background: #f3f4f6;
+
+    box-shadow: 0 5px 18px rgba(18, 97, 214, 0.12);
+}
+
+.profile-picture-section h3 {
+    margin: 0 0 6px;
+
+    color: #111827;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.profile-picture-section p {
+    margin: 0 0 18px;
+
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* -------------------------
+   UPLOAD BUTTON
+------------------------- */
+
+.upload-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+.upload-button:hover {
+    background: #1d4ed8;
+}
+
+.upload-button:active {
+    transform: scale(0.98);
+}
+
+/* -------------------------
+   PROFILE FORM
+------------------------- */
+
+.profile-card > label {
+    display: block;
+
+    margin: 18px 0 7px;
+
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-card > input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.profile-card > input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+/* -------------------------
+   PROFILE MOBILE
+------------------------- */
+
+@media (max-width: 768px) {
+
+    .profile-card {
+        width: 100%;
+
+        margin: 15px 0;
+
+        padding: 25px 20px;
+
+        border-radius: 22px;
+    }
+
+    .profile-picture-section {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+
+    .profile-picture-section .avatar {
+        width: 110px;
+        height: 110px;
+    }
+
+    .profile-picture-section h3 {
+        font-size: 20px;
+    }
+
+    .profile-picture-section p {
+        font-size: 13px;
+    }
+
+    .upload-button {
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+
+    .profile-card > input {
+        height: 50px;
+        font-size: 16px;
+    }
+}
+/* ================================
+   PROFILE FIX
+================================ */
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: inherit;
+}
+
+.profile-image {
+    width: 45px !important;
+    height: 45px !important;
+    min-width: 45px;
+    min-height: 45px;
+    max-width: 45px;
+    max-height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.profile-arrow {
+    font-size: 10px;
+    opacity: 0.7;
+}
+/* SIDEBAR COLORS */
+
+.sidebar {
+    background: #123b7a;
+}
+
+.sidebar li a {
+    color: #ffffff;
+}
+
+.sidebar li.active a {
+    background: #1465d8;
+    color: #ffffff;
+}
+
+.sidebar li a:hover {
+    background: #1465d8;
+    color: #ffffff;
+}
+ /* =========================================
+   PROFILE PICTURE UPLOAD FIX
+========================================= */
+
+.profile-picture-section {
+    text-align: center;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-picture-section .avatar {
+    width: 120px !important;
+    height: 120px !important;
+    display: block !important;
+    margin: 0 auto 15px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+.profile-picture-section h3 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: #111827;
+}
+
+.profile-picture-section p {
+    margin: 0 0 18px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.profile-picture-section .upload-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    background: #2563eb !important;
+    color: #ffffff !important;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.profile-picture-section .upload-button:hover {
+    background: #1d4ed8 !important;
+}
+
+#image-input {
+    display: none;
+}
+/* =========================================
+   DASHBOARD PROFILE BUTTON
+========================================= */
+
+.topbar .profile {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.topbar .profile-image {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.topbar .profile #profile-name {
+    display: inline-block !important;
+}
+/* =========================================
+   MY CARDS PAGE
+========================================= */
+
+.cards-page-card {
+
+    width: 100%;
+    max-width: 650px;
+
+    min-height: 330px;
+
+    margin: 30px auto;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    border-radius: 28px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1465d8,
+            #17489d
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(18, 61, 145, 0.25);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+.cards-page-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+}
+
+
+.cards-page-top strong {
+
+    display: block;
+
+    font-size: 30px;
+
+    letter-spacing: 1px;
+}
+
+
+.cards-page-top span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        rgba(255,255,255,0.75);
+
+    font-size: 15px;
+}
+
+
+.cards-page-chip {
+
+    font-size: 32px !important;
+
+    color: white !important;
+}
+
+
+.cards-page-number {
+
+    text-align: center;
+
+    margin-top: 35px;
+}
+
+
+.cards-page-number small {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255,255,255,0.75);
+}
+
+
+.cards-page-number strong {
+
+    font-size: 25px;
+
+    letter-spacing: 4px;
+
+    white-space: nowrap;
+}
+
+
+.cards-page-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-top: 35px;
+}
+
+
+.cards-page-bottom small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color:
+        rgba(255,255,255,0.7);
+
+    font-size: 10px;
+}
+
+
+.cards-page-bottom strong {
+
+    font-size: 15px;
+}
+
+
+/* CARD INFORMATION */
+
+.card-information {
+
+    max-width: 650px;
+
+    margin:
+        0 auto 22px;
+
+    padding: 26px;
+}
+
+
+.card-information h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    color: #123b7a;
+}
+
+
+.card-info-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom:
+        1px solid #e5e7eb;
+}
+
+
+.card-info-row:last-child {
+
+    border-bottom: none;
+}
+
+
+.card-info-row span {
+
+    color: #6b7280;
+}
+
+
+.card-info-row strong {
+
+    color: #111827;
+
+    text-align: right;
+}
+
+
+.card-status {
+
+    color: #16a34a !important;
+}
+
+
+/* CARD ACTIONS */
+
+.card-actions {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+
+.card-actions button {
+
+    flex: 1;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.card-actions button:hover {
+
+    background: #1d4ed8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .cards-page-card {
+
+        min-height: 280px;
+
+        margin: 15px 0 20px;
+
+        padding: 25px 22px;
+
+        border-radius: 24px;
+    }
+
+
+    .cards-page-top strong {
+
+        font-size: 27px;
+    }
+
+
+    .cards-page-number {
+
+        margin-top: 25px;
+    }
+
+
+    .cards-page-number strong {
+
+        font-size: 19px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .cards-page-bottom {
+
+        margin-top: 25px;
+    }
+
+
+    .card-information {
+
+        margin: 0 0 18px;
+
+        padding: 20px;
+
+        border-radius: 22px;
+    }
+
+
+    .card-info-row {
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .card-info-row strong {
+
+        text-align: left;
+    }
+
+
+    .card-actions {
+
+        margin: 0;
+
+        padding: 0;
+
+        background: transparent;
+
+        box-shadow: none;
+    }
+
+
+    .card-actions button {
+
+        padding: 13px 8px;
+
+        font-size: 13px;
+    }
+
+}
+/* =========================================
+   CARD LOCKED STATE
+========================================= */
+
+.card-status.card-locked {
+    color: #dc2626 !important;
+}
+
+.card-actions .unlock-card {
+    background: #16a34a;
+}
+
+.card-actions .unlock-card:hover {
+    background: #15803d;
+}

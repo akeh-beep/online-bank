@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NOVA BANK - Security</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==============================
+         MOBILE HEADER
+    =============================== -->
+
+    <header class="mobile-header">
+
+        <div class="mobile-logo">
+            <strong>NOVA BANK</strong>
+        </div>
+
+        <div class="mobile-profile">
+            <span id="mobile-profile-name"></span>
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         DESKTOP SIDEBAR
+    =============================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <span>🏦</span>
+
+            <h2>NOVA BANK</h2>
+
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="transfer.html">
+                    💸 Transfer
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="security.html">
+                    🔐 Security
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    💳 My Cards
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    💰 Payments
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#"
+                    onclick="logout()"
+                >
+                    🚪 Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <main class="content">
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>
+                    Security
+                </h1>
+
+                <p>
+                    Manage your account security
+                </p>
+
+            </div>
+
+          <div class="profile">
+
+    <img
+        id="profile-image"
+        class="profile-image"
+        src="default-profile.png"
+        alt="Profile"
+    >
+
+    <span id="profile-name"></span>
+
+</div>
+
+        </div>
+
+
+        <!-- ==============================
+             SECURITY CARD
+        =============================== -->
+
+        <section class="card security-card">
+
+            <div class="security-heading">
+
+                <div class="security-icon">
+                    🔐
+                </div>
+
+                <div>
+
+                    <h2>
+                        Change Password
+                    </h2>
+
+                    <p>
+                        Update your password to keep
+                        your account secure.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CURRENT PASSWORD -->
+
+            <div class="security-form-group">
+
+                <label for="current-password">
+                    Current Password
+                </label>
+
+                <input
+                    type="password"
+                    id="current-password"
+                    placeholder="Enter your current password"
+                >
+
+            </div>
+
+
+            <!-- NEW PASSWORD -->
+
+            <div class="security-form-group">
+
+                <label for="new-password">
+                    New Password
+                </label>
+
+                <input
+                    type="password"
+                    id="new-password"
+                    placeholder="Enter your new password"
+                >
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="security-form-group">
+
+                <label for="confirm-password">
+                    Confirm New Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirm-password"
+                    placeholder="Confirm your new password"
+                >
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <p
+                id="password-message"
+                class="password-message"
+            ></p>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="button"
+                class="change-password-button"
+                onclick="changePassword()"
+            >
+                Change Password
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         MOBILE BOTTOM NAV
+    =============================== -->
+
+    <nav class="mobile-nav">
+
+        <a
+            href="dashboard.html"
+            class="nav-item"
+        >
+
+            <span>🏠</span>
+
+            <small>
+                Home
+            </small>
+
+        </a>
+
+
+        <a
+            href="transfer.html"
+            class="nav-item"
+        >
+
+            <span>💸</span>
+
+            <small>
+                Transfer
+            </small>
+
+        </a>
+
+
+        <a
+            href="security.html"
+            class="nav-item active"
+        >
+
+            <span>🔐</span>
+
+            <small>
+                Security
+            </small>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="nav-item"
+            onclick="logout()"
+        >
+
+            <span>🚪</span>
+
+            <small>
+                Logout
+            </small>
+
+        </button>
+
+    </nav>
+
+
+    <script src="security.js"></script>
+
+</body>
+
+</html>

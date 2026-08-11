@@ -1,0 +1,464 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+
+/* =========================
+   ADMIN LAYOUT
+========================= */
+
+#admin-dashboard {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #111827;
+    color: white;
+    padding: 25px 18px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: 10;
+}
+
+.sidebar h2 {
+    font-size: 21px;
+    margin-bottom: 35px;
+    padding-left: 8px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 13px 14px;
+    color: #d1d5db;
+    text-decoration: none;
+    border-radius: 9px;
+    transition: 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar li.active a {
+    background: #2563eb;
+    color: white;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 35px 40px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.topbar p {
+    color: #6b7280;
+}
+
+.profile {
+    background: white;
+    padding: 11px 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    font-weight: 600;
+}
+
+
+/* =========================
+   ADMIN CONTROLS
+========================= */
+
+.admin-controls {
+    margin-bottom: 30px;
+}
+
+.admin-controls h2 {
+    margin-bottom: 18px;
+}
+
+.admin-control-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.admin-control-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: 0.2s;
+}
+
+.admin-control-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+.admin-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.admin-control-card h3 {
+    margin-bottom: 8px;
+}
+
+.admin-control-card p {
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   ADMIN SECTIONS
+========================= */
+
+.admin-section {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 28px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.admin-section h2 {
+    margin-bottom: 8px;
+}
+
+.admin-section > p {
+    color: #6b7280;
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   DEPOSIT FORM
+========================= */
+
+#deposit-section {
+    max-width: 750px;
+}
+
+#deposit-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+#deposit-section select,
+#deposit-section input {
+    width: 100%;
+    display: block;
+    padding: 13px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    font-size: 15px;
+    outline: none;
+}
+
+#deposit-section select:focus,
+#deposit-section input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+#deposit-message {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   USERS TABLE
+========================= */
+
+.admin-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-section th,
+.admin-section td {
+    text-align: left;
+    padding: 15px 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-section th {
+    background: #f9fafb;
+    font-size: 14px;
+}
+
+.admin-section td {
+    font-size: 14px;
+}
+
+.admin-section tr:hover td {
+    background: #f9fafb;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .admin-control-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .content {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+        padding: 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #admin-dashboard {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+    }
+
+   
+.content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 35px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .admin-section {
+        padding: 20px;
+        overflow-x: auto;
+    }
+
+}
+ 
+/* =========================
+   TRANSACTIONS FIX
+========================= */
+
+#transaction-section {
+    width: 100%;
+    margin-left: 0;
+    position: relative;
+    display: block;
+}
+
+#transaction-section table {
+    width: 100%;
+    margin-left: 0;
+}
+
+#transaction-section h2,
+#transaction-section p {
+    margin-left: 0;
+}
+/* =========================
+   MOBILE ADMIN DASHBOARD
+========================= */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .sidebar li {
+        margin: 0;
+    }
+
+    .sidebar a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+
+    .topbar h1 {
+        font-size: 25px;
+    }
+
+
+    .admin-control-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-section {
+        width: 100%;
+        padding: 18px;
+        overflow-x: auto;
+    }
+
+
+    #deposit-section {
+        max-width: 100%;
+    }
+
+
+    .admin-section table {
+        min-width: 650px;
+    }
+
+}
+.transaction-status {
+display: inline-block;
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 13px;
+font-weight: 600;
+}
+
+.transaction-status.pending {
+background: #fef3c7;
+color: #b45309;
+}
+
+.transaction-status.completed {
+background: #dcfce7;
+color: #15803d;
+}
+
+.transaction-status.failed {
+background: #fee2e2;
+color: #b91c1c;
+}
+
+.transaction-status.cancelled {
+background: #e5e7eb;
+color: #374151;
+}
