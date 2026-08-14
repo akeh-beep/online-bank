@@ -351,7 +351,7 @@ app.post("/api/register", async (req, res) => {
             email,
             password: hashedPassword,
             accountNumber,
-            balance: 5000
+            balance: 0
 
         });
 
