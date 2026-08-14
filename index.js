@@ -24,8 +24,12 @@ app.post("/api/login", async (req, res) => {
 
         const { username, password } = req.body;
 
-        const user = await User.findOne({ username });
-
+       const user = await User.findOne({
+    $or: [
+        { username: username },
+        { email: username }
+    ]
+});
         if (!user) {
             return res.json({
                 success: false,
