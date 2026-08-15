@@ -6,7 +6,7 @@ function formatMoney(amount) {
 }
 
 const tx = JSON.parse(localStorage.getItem("selectedTransaction"));
-
+console.log("SELECTED TRANSACTION:", tx);
 if (!tx) {
     window.location.href = "dashboard.html";
 }
