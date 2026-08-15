@@ -255,9 +255,6 @@ async function loadUsers() {
 
 }
 
-// ======================
-// Load Admin Transactions
-// ======================
 
 async function loadTransactions() {
 
@@ -270,16 +267,12 @@ async function loadTransactions() {
         );
 
         if (!response.ok) {
-
             throw new Error(
-                "Server returned " +
-                response.status
+                "Server returned " + response.status
             );
-
         }
 
-        const data =
-            await response.json();
+        const data = await response.json();
 
         console.log(
             "Transactions response:",
@@ -292,13 +285,10 @@ async function loadTransactions() {
             );
 
         if (!table) {
-
             console.error(
                 "admin-transaction-table not found"
             );
-
             return;
-
         }
 
         table.innerHTML = "";
@@ -311,15 +301,15 @@ async function loadTransactions() {
 
             table.innerHTML = `
                 <tr>
-                    <td colspan="7">
+                    <td colspan="8">
                         No transactions found.
                     </td>
                 </tr>
             `;
 
             return;
-
         }
+
 
         data.transactions.forEach(
             function (transaction) {
@@ -327,14 +317,15 @@ async function loadTransactions() {
                 const row =
                     document.createElement("tr");
 
+
                 // USER
 
                 const userCell =
                     document.createElement("td");
 
                 userCell.textContent =
-                    transaction.user ||
-                    "Unknown";
+                    transaction.user || "Unknown";
+
 
                 // ACCOUNT NUMBER
 
@@ -345,6 +336,7 @@ async function loadTransactions() {
                     transaction.accountNumber ||
                     "Unknown";
 
+
                 // TYPE
 
                 const typeCell =
@@ -353,6 +345,7 @@ async function loadTransactions() {
                 typeCell.textContent =
                     transaction.type ||
                     "Transaction";
+
 
                 // AMOUNT
 
@@ -372,6 +365,7 @@ async function loadTransactions() {
                         }
                     );
 
+
                 // STATUS
 
                 const statusCell =
@@ -381,13 +375,13 @@ async function loadTransactions() {
                     document.createElement("span");
 
                 let status =
-                    transaction.status ||
-                    "Completed";
+                    String(
+                        transaction.status ||
+                        "Completed"
+                    )
+                    .trim()
+                    .toLowerCase();
 
-                status =
-                    String(status)
-                        .trim()
-                        .toLowerCase();
 
                 if (status === "pending") {
 
@@ -397,9 +391,7 @@ async function loadTransactions() {
                     statusBadge.className =
                         "transaction-status pending";
 
-                }
-
-                else if (status === "failed") {
+                } else if (status === "failed") {
 
                     statusBadge.textContent =
                         "Failed";
@@ -407,9 +399,7 @@ async function loadTransactions() {
                     statusBadge.className =
                         "transaction-status failed";
 
-                }
-
-                else if (
+                } else if (
                     status === "cancelled" ||
                     status === "canceled"
                 ) {
@@ -420,9 +410,7 @@ async function loadTransactions() {
                     statusBadge.className =
                         "transaction-status cancelled";
 
-                }
-
-                else {
+                } else {
 
                     statusBadge.textContent =
                         "Completed";
@@ -436,6 +424,7 @@ async function loadTransactions() {
                     statusBadge
                 );
 
+
                 // DESCRIPTION
 
                 const descriptionCell =
@@ -444,6 +433,7 @@ async function loadTransactions() {
                 descriptionCell.textContent =
                     transaction.description ||
                     "No description";
+
 
                 // DATE
 
@@ -457,53 +447,204 @@ async function loadTransactions() {
                         ).toLocaleString("en-US")
                         : "Unknown";
 
-                // ADD CELLS
 
-                row.appendChild(
-                    userCell
-                );
+                // ACTION
 
-                row.appendChild(
-                    accountCell
-                );
+                const actionCell =
+                    document.createElement("td");
 
-                row.appendChild(
-                    typeCell
-                );
 
-                row.appendChild(
-                    amountCell
-                );
+                if (status === "pending") {
 
-                row.appendChild(
-                    statusCell
-                );
+                    const approveButton =
+                        document.createElement("button");
 
-                row.appendChild(
-                    descriptionCell
-                );
+                    approveButton.type = "button";
+                    approveButton.textContent =
+                        "Approve";
 
-                row.appendChild(
-                    dateCell
-                );
+                    approveButton.className =
+                        "approve-btn";
 
-                table.appendChild(
-                    row
-                );
+                    approveButton.onclick =
+                        function () {
+
+                            approveTransaction(
+                                transaction.transactionId
+                            );
+
+                        };
+
+
+                    const rejectButton =
+                        document.createElement("button");
+
+                    rejectButton.type = "button";
+                    rejectButton.textContent =
+                        "Reject";
+
+                    rejectButton.className =
+                        "reject-btn";
+
+                    rejectButton.onclick =
+                        function () {
+
+                            rejectTransaction(
+                                transaction.transactionId
+                            );
+
+                        };
+
+
+                    actionCell.appendChild(
+                        approveButton
+                    );
+
+                    actionCell.appendChild(
+                        rejectButton
+                    );
+
+                } else {
+
+                    actionCell.textContent =
+                        transaction.status ||
+                        "Completed";
+
+                }
+
+
+                // ADD EACH CELL ONCE
+
+                row.appendChild(userCell);
+                row.appendChild(accountCell);
+                row.appendChild(typeCell);
+                row.appendChild(amountCell);
+                row.appendChild(statusCell);
+                row.appendChild(descriptionCell);
+                row.appendChild(dateCell);
+                row.appendChild(actionCell);
+
+
+                table.appendChild(row);
 
             }
         );
+
 
         console.log(
             "Transactions displayed:",
             data.transactions.length
         );
 
+
     } catch (error) {
 
         console.error(
             "Load transactions error:",
             error
+        );
+
+    }
+
+}
+
+
+async function approveTransaction(transactionId) {
+
+    if (!confirm("Approve this transfer?")) {
+        return;
+    }
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/admin/transactions/${adminId}/${transactionId}/approve`,
+                {
+                    method: "POST"
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            alert(
+                data.message ||
+                "Unable to approve transfer."
+            );
+
+            return;
+        }
+
+        alert(
+            "Transfer approved successfully."
+        );
+
+        await loadTransactions();
+        await loadUsers();
+
+    } catch (error) {
+
+        console.error(
+            "Approve transaction error:",
+            error
+        );
+
+        alert(
+            "Unable to approve transfer."
+        );
+
+    }
+
+}
+
+
+async function rejectTransaction(transactionId) {
+
+    if (!confirm("Reject this transfer?")) {
+        return;
+    }
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/admin/transactions/${adminId}/${transactionId}/reject`,
+                {
+                    method: "POST"
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            alert(
+                data.message ||
+                "Unable to reject transfer."
+            );
+
+            return;
+        }
+
+        alert(
+            "Transfer rejected."
+        );
+
+        await loadTransactions();
+
+    } catch (error) {
+
+        console.error(
+            "Reject transaction error:",
+            error
+        );
+
+        alert(
+            "Unable to reject transfer."
         );
 
     }
